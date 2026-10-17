@@ -2,20 +2,14 @@ name: Build APK
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Build with Buildozer
+        uses: ArtemSBulgakov/buildozer-action@v1
         with:
-          python-version: '3.10'
-      - name: Install dependencies
-        run: |
-          pip install buildozer cython
-          sudo apt update
-          sudo apt install -y openjdk-17-jdk zip unzip
-      - name: Build
-        run: |
-          buildozer android debug
+          command: buildozer android debug
+          buildozer_version: stable
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
