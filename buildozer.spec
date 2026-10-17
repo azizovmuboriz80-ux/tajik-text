@@ -21,3 +21,6 @@ android.api = 33
 android.minapi = 21
 android.ndk = 25b
 android.accept_sdk_license_agreement = True
+p4a.fork = kivy
+p4a.branch = develop
+android.build_tools_version = 33.0.1
