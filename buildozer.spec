@@ -6,7 +6,6 @@ source.dir = .
 version = 0.1
 requirements = python3,kivy
 orientation = portrait
-icon.filename = icon.png
 
 [buildozer]
 log_level = 2
